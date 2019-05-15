@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:schedule="clr-namespace:Syncfusion.SfSchedule.XForms;assembly=Syncfusion.SfSchedule.XForms"
+             x:Class="Schedule.Views.SchedulePage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="addButton"
+                     Text="+"
+                     Clicked="AddNewExerciseClicked"/>
+    </ContentPage.ToolbarItems>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="6*" />
+            <RowDefinition Height="4*" />
+        </Grid.RowDefinitions>
+
+        <schedule:SfSchedule x:Name="schedule" ScheduleView="MonthView" Grid.Row="0" VerticalOptions="Fill">
+            <schedule:SfSchedule.MonthViewSettings>
+                <schedule:MonthViewSettings AppointmentDisplayMode="Indicator">
+                </schedule:MonthViewSettings>
+            </schedule:SfSchedule.MonthViewSettings>
+        </schedule:SfSchedule>
+        <ListView x:Name="ItemsListView"
+                  Grid.Row="1" VerticalOptions="Fill"
+                  ItemsSource="{Binding Exercices}"
+                  SelectedItem="{Binding SelectedExercise}"
+                  HasUnevenRows="true"
+                  RefreshCommand="{Binding LoadItemsCommand}"
+                  IsPullToRefreshEnabled="true"
+                  IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+                  CachingStrategy="RecycleElement"
+                  ItemSelected="ExerciseSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell x:Name="viewCell">
+                        <StackLayout Orientation="Horizontal">
+                            <StackLayout VerticalOptions="StartAndExpand" Padding="10">
+                                <Label Text="{Binding Name}" 
+                                BackgroundColor="{Binding Color}"
+                                LineBreakMode="NoWrap" 
+                                Style="{DynamicResource ListItemTextStyle}"
+                                FontSize="16" />
+                                <Label Text="{Binding Description}" 
+                                LineBreakMode="NoWrap"
+                                Style="{DynamicResource ListItemDetailTextStyle}"
+                                FontSize="13" />
+                            </StackLayout>
+                            <Button Text="more" BorderWidth="4" HorizontalOptions="EndAndExpand" Clicked="MoreButtonClicked"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</ContentPage>

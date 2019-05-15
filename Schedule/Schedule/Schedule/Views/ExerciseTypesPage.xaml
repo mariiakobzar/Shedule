@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Schedule.Views.ExerciseTypesPage">
+    <!--<ListView x:Name="ListValues"
+              ItemsSource="{Binding ListTypes}"
+              ItemSelected="OnItemSelected">-->
+
+    <ListView x:Name="ListValues"
+              SeparatorVisibility="None"
+              ItemsSource="{Binding ListTypes}"
+              ItemSelected="OnItemSelected"
+              SelectionMode="Single">
+
+            <ListView.RowHeight>
+                <OnPlatform x:TypeArguments="x:Int32">
+                <On Platform="iOS, Android" Value="80" />
+            </OnPlatform>
+            </ListView.RowHeight>
+
+            <ListView.ItemTemplate>
+            <DataTemplate>
+                <!--<ViewCell>
+                    <StackLayout Padding="10">
+                        <Label Text="{Binding TypeName}" 
+                                LineBreakMode="NoWrap" 
+                                Style="{DynamicResource ListItemTextStyle}" 
+                                FontSize="16" />
+                    </StackLayout>
+                </ViewCell>-->
+
+
+                <ViewCell>
+                    <ContentView Padding="5">
+                        <Frame OutlineColor="White"
+                               Padding="10">
+                            <StackLayout Orientation="Horizontal">
+                                <BoxView Color="{Binding TypeColor}"
+                                         WidthRequest="50"
+                                         HeightRequest="50" 
+                                         CornerRadius="50"/>
+                                <StackLayout>
+                                    <Label Text="{Binding TypeName}"
+                                           FontSize="16"
+                                           VerticalOptions="CenterAndExpand" />
+                                    
+                                </StackLayout>
+                            </StackLayout>
+                        </Frame>
+                    </ContentView>
+                </ViewCell>
+
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+    
+    
+    
+</ContentPage>
