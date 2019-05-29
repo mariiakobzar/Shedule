@@ -18,6 +18,13 @@ namespace Schedule.Views
             MasterBehavior = MasterBehavior.Popover;
 
             MenuPages.Add((int)MenuItemType.Browse, (NavigationPage)Detail);
+
+            IsPresentedChanged += MainPage_IsPresentedChanged;
+        }
+
+        private void MainPage_IsPresentedChanged(object sender, EventArgs e)
+        {
+
         }
 
         public async Task NavigateFromMenu(int id)
@@ -27,7 +34,7 @@ namespace Schedule.Views
                 switch (id)
                 {
                     case (int)MenuItemType.Schedule:
-                        MenuPages.Add(id, new NavigationPage(new ExerciseListPage()));
+                        MenuPages.Add(id, new NavigationPage(new ExerciseAllPage()));
                         break;
                     case (int)MenuItemType.Browse:
                         MenuPages.Add(id, new NavigationPage(new SchedulePage()));

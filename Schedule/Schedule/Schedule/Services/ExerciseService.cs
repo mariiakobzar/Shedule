@@ -13,6 +13,7 @@ namespace Schedule.Services
     {
         private static SQLiteConnection db = null;
         private static bool isInitialized = false;
+        
 
         static ExerciseService()
         {
@@ -82,6 +83,11 @@ namespace Schedule.Services
         public void InsertInstance(Exercise exercise)
         {
             db.Insert(exercise);
+        }
+
+        public void InsertMany(IEnumerable<Exercise> list)
+        {
+            db.InsertAll(list);
         }
 
         public void DeleteInstance(Exercise exercise)

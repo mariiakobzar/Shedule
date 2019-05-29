@@ -2,54 +2,111 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:schedule="clr-namespace:Syncfusion.SfSchedule.XForms;assembly=Syncfusion.SfSchedule.XForms"
+             xmlns:syncfusion="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
+             xmlns:numeric="clr-namespace:Syncfusion.SfNumericUpDown.XForms;assembly=Syncfusion.SfNumericUpDown.XForms"
+             xmlns:customcontrols="clr-namespace:Schedule.CustomControls;assembly=Schedule"
              x:Class="Schedule.Views.SchedulePage">
     <ContentPage.ToolbarItems>
         <ToolbarItem x:Name="addButton"
                      Text="+"
                      Clicked="AddNewExerciseClicked"/>
     </ContentPage.ToolbarItems>
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="6*" />
-            <RowDefinition Height="4*" />
-        </Grid.RowDefinitions>
-
-        <schedule:SfSchedule x:Name="schedule" ScheduleView="MonthView" Grid.Row="0" VerticalOptions="Fill">
-            <schedule:SfSchedule.MonthViewSettings>
-                <schedule:MonthViewSettings AppointmentDisplayMode="Indicator">
-                </schedule:MonthViewSettings>
-            </schedule:SfSchedule.MonthViewSettings>
-        </schedule:SfSchedule>
-        <ListView x:Name="ItemsListView"
-                  Grid.Row="1" VerticalOptions="Fill"
-                  ItemsSource="{Binding Exercices}"
-                  SelectedItem="{Binding SelectedExercise}"
-                  HasUnevenRows="true"
-                  RefreshCommand="{Binding LoadItemsCommand}"
-                  IsPullToRefreshEnabled="true"
-                  IsRefreshing="{Binding IsBusy, Mode=OneWay}"
-                  CachingStrategy="RecycleElement"
-                  ItemSelected="ExerciseSelected">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell x:Name="viewCell">
-                        <StackLayout Orientation="Horizontal">
-                            <StackLayout VerticalOptions="StartAndExpand" Padding="10">
-                                <Label Text="{Binding Name}" 
-                                BackgroundColor="{Binding Color}"
-                                LineBreakMode="NoWrap" 
-                                Style="{DynamicResource ListItemTextStyle}"
-                                FontSize="16" />
-                                <Label Text="{Binding Description}" 
-                                LineBreakMode="NoWrap"
-                                Style="{DynamicResource ListItemDetailTextStyle}"
-                                FontSize="13" />
-                            </StackLayout>
-                            <Button Text="more" BorderWidth="4" HorizontalOptions="EndAndExpand" Clicked="MoreButtonClicked"/>
-                        </StackLayout>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-    </Grid>
+    <ContentPage.Content>
+        <AbsoluteLayout x:Name="editView" Padding="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <ContentView x:Name="popupView" BackgroundColor="#C0808080" Padding="10, 0" IsVisible="false" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All">
+                <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+                    <StackLayout Orientation="Vertical" HeightRequest="400" WidthRequest="300" BackgroundColor="White">
+                        <Label Text="Вага:"
+                               Margin="20,15,5,2"/>
+                        <numeric:SfNumericUpDown x:Name="numericWeight"
+                                                 Value="{Binding SelectedExercise.Weight}"
+                                                 Margin="20,0,60,2"/>
+                        <Label Text="Підхід:"
+                               Margin="20,15,5,2"/>
+                        <numeric:SfNumericUpDown x:Name="numericTouch"
+                                                 Value="{Binding SelectedExercise.Touch}"
+                                                 Margin="20,0,60,2"/>
+                        <Label Text="Повторення:"
+                               Margin="20,15,5,2"/>
+                        <numeric:SfNumericUpDown x:Name="numericReiteration"
+                                                 Value="{Binding SelectedExercise.Reiteration}"
+                                                 Margin="20,0,60,2"/>
+                        <Button Margin="20,0,20,0" Text="Зберегти" Clicked="SaveButton_Clicked"></Button>
+                        <Button Margin="20,0,20,0" Text="Відмінити" Clicked="CancelButton_Clicked"></Button>
+                    </StackLayout>
+                </StackLayout>
+            </ContentView>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="6*"/>
+                    <RowDefinition Height="4*"/>
+                </Grid.RowDefinitions>
+                <schedule:SfSchedule x:Name="schedule" Grid.Row="0" ScheduleView="MonthView" VerticalOptions="FillAndExpand">
+                    <schedule:SfSchedule.MonthViewSettings>
+                        <schedule:MonthViewSettings AppointmentDisplayMode="Indicator">
+                        </schedule:MonthViewSettings>
+                    </schedule:SfSchedule.MonthViewSettings>
+                </schedule:SfSchedule>
+                <syncfusion:SfListView x:Name="ItemsListView"
+                                       SelectionMode="None"
+                                       Grid.Row="1"
+                                       ItemSpacing="5"
+                                       ItemSize="80"
+                                       ItemsSource="{Binding Exercices}"
+                                       ItemTapped="ItemsListView_ItemTapped"
+                                       AllowSwiping="True"
+                                       VerticalOptions="FillAndExpand"
+                                       SwipeEnded="ItemsListView_SwipeEnded">
+                    <syncfusion:SfListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell x:Name="viewCell">
+                                <ContentView>
+                                    <Frame HasShadow="True" Padding="2" Margin="2">
+                                        <StackLayout Orientation="Horizontal">
+                                            <customcontrols:RoundedImageView
+                                                    x:Name="roundedView"
+                                                    BorderThickness="1"
+                                                    Source="{Binding Converter=FromPathToImageConverter, Path=ImagePath, Mode=OneWay}"
+                                                    FillColor="{Binding Converter=FromHexToColorConverter, Path=ColorHex, Mode=OneWay}"
+                                                    HeightRequest="80"
+                                                    WidthRequest="80"
+                                                    VerticalOptions="Center"
+                                                    HorizontalOptions="Center"/>
+                                            <StackLayout VerticalOptions="StartAndExpand" Padding="10">
+                                                <Label Text="{Binding Name}"
+                                                   BackgroundColor="{Binding Color}"
+                                                   LineBreakMode="NoWrap"
+                                                   Style="{DynamicResource ListItemTextStyle}"
+                                                   FontSize="16" />
+                                                <Label Text="{Binding NumbersFormatted}"/>
+                                                <Label Text="{Binding Description}"
+                                                   LineBreakMode="NoWrap"
+                                                   Style="{DynamicResource ListItemDetailTextStyle}"
+                                                   FontSize="13" />
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </Frame>
+                                </ContentView>
+                            </ViewCell>
+                        </DataTemplate>
+                    </syncfusion:SfListView.ItemTemplate>
+                    <syncfusion:SfListView.RightSwipeTemplate>
+                        <DataTemplate x:Name="RightSwipeTemplate">
+                            <Grid BackgroundColor="#DC595F" HorizontalOptions="Fill" VerticalOptions="Fill">
+                                <Grid VerticalOptions="Center" HorizontalOptions="Center">
+                                    <Image Grid.Column="0"
+                                   Grid.Row="0"
+                                   HeightRequest="30"
+                                   WidthRequest="30"
+                                   BackgroundColor="Transparent"
+                                   BindingContextChanged="Image_BindingContextChanged"
+                                   Source="@drawable/Delete.png"/>
+                                </Grid>
+                            </Grid>
+                        </DataTemplate>
+                    </syncfusion:SfListView.RightSwipeTemplate>
+                </syncfusion:SfListView>
+            </Grid>
+        </AbsoluteLayout>
+    </ContentPage.Content>
 </ContentPage>

@@ -57,7 +57,55 @@ namespace Schedule.Droid
 		{
 			
 			// aapt resource value: 0x7F010002
-			public const int xamarin_logo = 2130771970;
+			public const int biceps = 2130771970;
+			
+			// aapt resource value: 0x7F010003
+			public const int bodybuilder = 2130771971;
+			
+			// aapt resource value: 0x7F010004
+			public const int calves = 2130771972;
+			
+			// aapt resource value: 0x7F010005
+			public const int chest = 2130771973;
+			
+			// aapt resource value: 0x7F010006
+			public const int Delete = 2130771974;
+			
+			// aapt resource value: 0x7F010007
+			public const int glutes = 2130771975;
+			
+			// aapt resource value: 0x7F010008
+			public const int hamstrings = 2130771976;
+			
+			// aapt resource value: 0x7F010009
+			public const int leg = 2130771977;
+			
+			// aapt resource value: 0x7F010010
+			public const int neck = 2130771984;
+			
+			// aapt resource value: 0x7F010011
+			public const int pilates = 2130771985;
+			
+			// aapt resource value: 0x7F010012
+			public const int prelum = 2130771986;
+			
+			// aapt resource value: 0x7F010013
+			public const int Schedule = 2130771987;
+			
+			// aapt resource value: 0x7F010014
+			public const int Schedule2 = 2130771988;
+			
+			// aapt resource value: 0x7F010015
+			public const int shoulders = 2130771989;
+			
+			// aapt resource value: 0x7F010016
+			public const int triceps = 2130771990;
+			
+			// aapt resource value: 0x7F010017
+			public const int xamarin_logo = 2130771991;
+			
+			// aapt resource value: 0x7F010018
+			public const int yoga = 2130771992;
 			
 			static Drawable()
 			{

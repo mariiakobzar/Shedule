@@ -1,7 +1,4 @@
 ﻿using Schedule.Enums;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using Xamarin.Forms;
 
 namespace Schedule.Models
@@ -13,5 +10,7 @@ namespace Schedule.Models
         public ExerciseTypeEnum Type { get; set; }
 
         public Color TypeColor { get; set; }
+
+        public string ImagePath { get; set; }
     }
 }

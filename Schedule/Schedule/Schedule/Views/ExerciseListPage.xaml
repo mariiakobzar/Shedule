@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:customcontrols="clr-namespace:Schedule.CustomControls;assembly=Schedule"
              x:Class="Schedule.Views.ExerciseListPage">
     <!--<ContentPage.Content>
         <StackLayout>
@@ -14,54 +15,34 @@
                      Text="Save"
                      Clicked="SaveButtonClicked"/>
     </ContentPage.ToolbarItems>
-    
-    <!--<ListView x:Name="ExercisesList"
-              ItemsSource="{Binding Exercises}"
-              SelectedItem="{Binding SelectedExercise}"
-              ItemSelected="ExerciseSelected"
-              SelectionMode="Single">-->
-
-
     <ListView x:Name="ExercisesList"
               SeparatorVisibility="None"
               ItemsSource="{Binding Exercises}"
               SelectedItem="{Binding SelectedExercise}"
               ItemSelected="ExerciseSelected"
               SelectionMode="Single">
-        
         <ListView.RowHeight>
             <OnPlatform x:TypeArguments="x:Int32">
                 <On Platform="iOS, Android" Value="80" />
                 <!--<On Platform="UWP" Value="90" />-->
             </OnPlatform>
         </ListView.RowHeight>
-
         <ListView.ItemTemplate>
             <DataTemplate>
-
-                <!--<ViewCell>
-                    <StackLayout Padding="10" Orientation="Horizontal">
-                        <BoxView Color="Red"
-                                 WidthRequest="50"
-                                 HeightRequest="50" />
-                        <Label Text="{Binding Name}" 
-                                LineBreakMode="NoWrap" 
-                                Style="{DynamicResource ListItemTextStyle}" 
-                                FontSize="16" />
-                    </StackLayout>
-                </ViewCell>-->
-
                 <ViewCell >
                     <ContentView Padding="5">
                         <Frame OutlineColor="White"
                                Padding="10">
                             <StackLayout Orientation="Horizontal">
-                                <BoxView x:Name="boxView"
-                                         WidthRequest="50"
-                                         HeightRequest="50" 
-                                         CornerRadius="50"
-                                         BindingContext="{Binding Source={x:Reference ExercisesList}, Path=BindingContext}" 
-                                         Color="{Binding ColorType}"/>
+                                <customcontrols:RoundedImageView
+                                                    x:Name="roundedView"
+                                                    BorderThickness="1"
+                                                    Source="{Binding Converter=FromPathToImageConverter, Path=ImagePath, Mode=OneWay}"
+                                                    FillColor="{Binding Converter=FromHexToColorConverter, Path=ColorHex, Mode=OneWay}"
+                                                    HeightRequest="80"
+                                                    WidthRequest="80"
+                                                    VerticalOptions="Center"
+                                                    HorizontalOptions="Center"/>
                                 <StackLayout>
                                     <Label Text="{Binding Name}"
                                            FontSize="16"
@@ -74,8 +55,6 @@
                         </Frame>
                     </ContentView>
                 </ViewCell>
-
-
             </DataTemplate>
         </ListView.ItemTemplate>
     </ListView>

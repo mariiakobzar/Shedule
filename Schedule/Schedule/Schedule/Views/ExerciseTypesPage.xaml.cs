@@ -39,9 +39,9 @@ namespace Schedule.Views
             ListValues.SelectedItem = null;
         }
 
-        //private async void TypeSelected(object sender, SelectedItemChangedEventArgs e)
-        //{
-        //    await Navigation.PushModalAsync(new NavigationPage(new ExerciseListPage()));
-        //}
+        private async void AddButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new NewExercisePage());
+        }
     }
 }

@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Schedule.Android", "Schedul
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Schedule.UWP", "Schedule\Schedule.UWP\Schedule.UWP.csproj", "{EF20E4A1-3F82-4FEA-9F1F-7AABC0273AF4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Schedule", "Schedule\Schedule\Schedule.csproj", "{514FBB11-B76D-455B-93B1-75FACAC439CC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Schedule", "Schedule\Schedule\Schedule.csproj", "{514FBB11-B76D-455B-93B1-75FACAC439CC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

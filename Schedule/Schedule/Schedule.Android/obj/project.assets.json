@@ -105,6 +105,58 @@
           "lib/MonoAndroid10/Syncfusion.Core.XForms.dll": {}
         }
       },
+      "Syncfusion.Xamarin.DataSource/16.4.0.42": {
+        "type": "package",
+        "compile": {
+          "lib/MonoAndroid10/Syncfusion.DataSource.Portable.dll": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid10/Syncfusion.DataSource.Portable.dll": {}
+        }
+      },
+      "Syncfusion.Xamarin.GridCommon/16.4.0.42": {
+        "type": "package",
+        "compile": {
+          "lib/MonoAndroid10/Syncfusion.GridCommon.Portable.dll": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid10/Syncfusion.GridCommon.Portable.dll": {}
+        }
+      },
+      "Syncfusion.Xamarin.SfListView/16.4.0.42": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Xamarin.Core": "16.4.0.42",
+          "Syncfusion.Xamarin.DataSource": "16.4.0.42",
+          "Syncfusion.Xamarin.GridCommon": "16.4.0.42",
+          "Xamarin.Forms": "2.5.1.527436"
+        },
+        "compile": {
+          "lib/MonoAndroid10/Syncfusion.SfListView.XForms.Android.dll": {},
+          "lib/MonoAndroid10/Syncfusion.SfListView.XForms.dll": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid10/Syncfusion.SfListView.XForms.Android.dll": {},
+          "lib/MonoAndroid10/Syncfusion.SfListView.XForms.dll": {}
+        }
+      },
+      "Syncfusion.Xamarin.SfNumericUpDown/16.4.0.42": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Xamarin.Core": "16.4.0.42",
+          "Xamarin.Forms": "2.5.1.527436"
+        },
+        "compile": {
+          "lib/MonoAndroid10/Syncfusion.SfNumericUpDown.Android.dll": {},
+          "lib/MonoAndroid10/Syncfusion.SfNumericUpDown.XForms.Android.dll": {},
+          "lib/MonoAndroid10/Syncfusion.SfNumericUpDown.XForms.dll": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid10/Syncfusion.SfNumericUpDown.Android.dll": {},
+          "lib/MonoAndroid10/Syncfusion.SfNumericUpDown.XForms.Android.dll": {},
+          "lib/MonoAndroid10/Syncfusion.SfNumericUpDown.XForms.dll": {}
+        }
+      },
       "Syncfusion.Xamarin.SfSchedule/16.4.0.42": {
         "type": "package",
         "dependencies": {
@@ -466,6 +518,8 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "SQLiteNetExtensions": "2.1.0",
+          "Syncfusion.Xamarin.SfListView": "16.4.0.42",
+          "Syncfusion.Xamarin.SfNumericUpDown": "16.4.0.42",
           "Syncfusion.Xamarin.SfSchedule": "16.4.0.42",
           "Xamarin.Forms": "3.4.0.1008975"
         },
@@ -705,6 +759,124 @@
         "lib/uap10.0/Syncfusion.Core.XForms.xml",
         "syncfusion.xamarin.core.16.4.0.42.nupkg.sha512",
         "syncfusion.xamarin.core.nuspec"
+      ]
+    },
+    "Syncfusion.Xamarin.DataSource/16.4.0.42": {
+      "sha512": "XhKIT2Sl4Q6KLqwrjCXxkGyawr0okYhYw1WwcZ3lgtrxBtaen5X+8OsbKslEfs9kKZgXbSARWd+uxfikX2VsgA==",
+      "type": "package",
+      "path": "syncfusion.xamarin.datasource/16.4.0.42",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/MonoAndroid10/Syncfusion.DataSource.Portable.XML",
+        "lib/MonoAndroid10/Syncfusion.DataSource.Portable.dll",
+        "lib/Xamarin.iOS10/Syncfusion.DataSource.Portable.XML",
+        "lib/Xamarin.iOS10/Syncfusion.DataSource.Portable.dll",
+        "lib/netstandard1.0/Syncfusion.DataSource.Portable.XML",
+        "lib/netstandard1.0/Syncfusion.DataSource.Portable.dll",
+        "lib/portable-win+net45+wp80+win81+wpa81/Syncfusion.DataSource.Portable.XML",
+        "lib/portable-win+net45+wp80+win81+wpa81/Syncfusion.DataSource.Portable.dll",
+        "lib/uap10.0/Syncfusion.DataSource.Portable.XML",
+        "lib/uap10.0/Syncfusion.DataSource.Portable.dll",
+        "syncfusion.xamarin.datasource.16.4.0.42.nupkg.sha512",
+        "syncfusion.xamarin.datasource.nuspec"
+      ]
+    },
+    "Syncfusion.Xamarin.GridCommon/16.4.0.42": {
+      "sha512": "6S0/THExMloSTnU3viI75IwD2zaIro849CYLTRrhZVhTG9uqlKsr2g8v6d/PAAr6L6mp40lltzDMLDKzYgfsGA==",
+      "type": "package",
+      "path": "syncfusion.xamarin.gridcommon/16.4.0.42",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/MonoAndroid10/Syncfusion.GridCommon.Portable.XML",
+        "lib/MonoAndroid10/Syncfusion.GridCommon.Portable.dll",
+        "lib/Xamarin.Mac/Syncfusion.GridCommon.Portable.XML",
+        "lib/Xamarin.Mac/Syncfusion.GridCommon.Portable.dll",
+        "lib/Xamarin.iOS10/Syncfusion.GridCommon.Portable.XML",
+        "lib/Xamarin.iOS10/Syncfusion.GridCommon.Portable.dll",
+        "lib/netstandard1.0/Syncfusion.GridCommon.Portable.XML",
+        "lib/netstandard1.0/Syncfusion.GridCommon.Portable.dll",
+        "lib/portable-win+net45+wp80+win81+wpa81/Syncfusion.GridCommon.Portable.XML",
+        "lib/portable-win+net45+wp80+win81+wpa81/Syncfusion.GridCommon.Portable.dll",
+        "lib/uap10.0/Syncfusion.GridCommon.Portable.XML",
+        "lib/uap10.0/Syncfusion.GridCommon.Portable.dll",
+        "syncfusion.xamarin.gridcommon.16.4.0.42.nupkg.sha512",
+        "syncfusion.xamarin.gridcommon.nuspec"
+      ]
+    },
+    "Syncfusion.Xamarin.SfListView/16.4.0.42": {
+      "sha512": "RgSuFOmURAEz/SHTlM1gJnSxJyDlE7PpPq7mz35N+D5i+Ne78zSyOgSF818UVnGTv+yQABWeMAsIUWkGSA/dPw==",
+      "type": "package",
+      "path": "syncfusion.xamarin.sflistview/16.4.0.42",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/MonoAndroid10/Syncfusion.SfListView.XForms.Android.dll",
+        "lib/MonoAndroid10/Syncfusion.SfListView.XForms.dll",
+        "lib/MonoAndroid10/Syncfusion.SfListView.XForms.xml",
+        "lib/Xamarin.Mac/Syncfusion.SfListView.XForms.dll",
+        "lib/Xamarin.Mac/Syncfusion.SfListView.XForms.macOS.dll",
+        "lib/Xamarin.iOS10/Syncfusion.SfListView.XForms.dll",
+        "lib/Xamarin.iOS10/Syncfusion.SfListView.XForms.iOS.dll",
+        "lib/Xamarin.iOS10/Syncfusion.SfListView.XForms.xml",
+        "lib/netstandard1.0/Syncfusion.SfListView.XForms.dll",
+        "lib/netstandard1.0/Syncfusion.SfListView.XForms.xml",
+        "lib/portable-win+net45+wp80+win81+wpa81/Syncfusion.SfListView.XForms.dll",
+        "lib/portable-win+net45+wp80+win81+wpa81/Syncfusion.SfListView.XForms.xml",
+        "lib/uap10.0/Syncfusion.SfListView.XForms.UWP.dll",
+        "lib/uap10.0/Syncfusion.SfListView.XForms.dll",
+        "lib/uap10.0/Syncfusion.SfListView.XForms.xml",
+        "syncfusion.xamarin.sflistview.16.4.0.42.nupkg.sha512",
+        "syncfusion.xamarin.sflistview.nuspec"
+      ]
+    },
+    "Syncfusion.Xamarin.SfNumericUpDown/16.4.0.42": {
+      "sha512": "2BVMeW6W6/uku5xINutDWG8n+lwGPZryUvChJv74FkuzM1ACAnOQTEXfV5xx1I30cJpq8pa/CC0i2dBxiuRKCQ==",
+      "type": "package",
+      "path": "syncfusion.xamarin.sfnumericupdown/16.4.0.42",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/MonoAndroid10/Syncfusion.SfNumericUpDown.Android.dll",
+        "lib/MonoAndroid10/Syncfusion.SfNumericUpDown.XForms.Android.dll",
+        "lib/MonoAndroid10/Syncfusion.SfNumericUpDown.XForms.dll",
+        "lib/MonoAndroid10/Syncfusion.SfNumericUpDown.XForms.xml",
+        "lib/Xamarin.iOS10/Syncfusion.SfNumericUpDown.XForms.dll",
+        "lib/Xamarin.iOS10/Syncfusion.SfNumericUpDown.XForms.iOS.dll",
+        "lib/Xamarin.iOS10/Syncfusion.SfNumericUpDown.XForms.xml",
+        "lib/Xamarin.iOS10/Syncfusion.SfNumericUpDown.iOS.dll",
+        "lib/Xamarin.iOS10/Syncfusion.SfNumericUpDown.iOS.xml",
+        "lib/netstandard1.0/Syncfusion.SfNumericUpDown.XForms.dll",
+        "lib/netstandard1.0/Syncfusion.SfNumericUpDown.XForms.xml",
+        "lib/portable-win+net45+wp80+win81+wpa81/Syncfusion.SfNumericUpDown.XForms.dll",
+        "lib/portable-win+net45+wp80+win81+wpa81/Syncfusion.SfNumericUpDown.XForms.xml",
+        "lib/uap10.0/Syncfusion.SfInput.UWP.XML",
+        "lib/uap10.0/Syncfusion.SfInput.UWP.dll",
+        "lib/uap10.0/Syncfusion.SfInput.UWP.pri",
+        "lib/uap10.0/Syncfusion.SfInput.UWP/DeviceFamily-Mobile/Themes/InputStyles.xaml",
+        "lib/uap10.0/Syncfusion.SfInput.UWP/DeviceFamily-Mobile/Themes/InputStyles.xbf",
+        "lib/uap10.0/Syncfusion.SfInput.UWP/Properties/Syncfusion.SfInput.UWP.rd.xml",
+        "lib/uap10.0/Syncfusion.SfInput.UWP/Syncfusion.SfInput.UWP.XML",
+        "lib/uap10.0/Syncfusion.SfInput.UWP/Syncfusion.SfInput.UWP.xr.xml",
+        "lib/uap10.0/Syncfusion.SfInput.UWP/Syncfusion.SfShared.UWP.xml",
+        "lib/uap10.0/Syncfusion.SfInput.UWP/Themes/InputStyles.xaml",
+        "lib/uap10.0/Syncfusion.SfInput.UWP/Themes/InputStyles.xbf",
+        "lib/uap10.0/Syncfusion.SfInput.UWP/Themes/generic.xaml",
+        "lib/uap10.0/Syncfusion.SfInput.UWP/Themes/generic.xbf",
+        "lib/uap10.0/Syncfusion.SfNumericUpDown.XForms.UWP.dll",
+        "lib/uap10.0/Syncfusion.SfNumericUpDown.XForms.dll",
+        "lib/uap10.0/Syncfusion.SfNumericUpDown.XForms.xml",
+        "lib/uap10.0/Syncfusion.SfShared.UWP.XML",
+        "lib/uap10.0/Syncfusion.SfShared.UWP.dll",
+        "lib/uap10.0/Syncfusion.SfShared.UWP.pri",
+        "lib/uap10.0/Syncfusion.SfShared.UWP/Properties/Syncfusion.SfShared.UWP.rd.xml",
+        "lib/uap10.0/Syncfusion.SfShared.UWP/Syncfusion.SfShared.UWP.XML",
+        "lib/uap10.0/Syncfusion.SfShared.UWP/Syncfusion.SfShared.UWP.xr.xml",
+        "lib/uap10.0/Syncfusion.SfShared.UWP/Themes/generic.xaml",
+        "lib/uap10.0/Syncfusion.SfShared.UWP/Themes/generic.xbf",
+        "syncfusion.xamarin.sfnumericupdown.16.4.0.42.nupkg.sha512",
+        "syncfusion.xamarin.sfnumericupdown.nuspec"
       ]
     },
     "Syncfusion.Xamarin.SfSchedule/16.4.0.42": {
@@ -1173,6 +1345,8 @@
     "MonoAndroid,Version=v8.1": [
       "SQLiteNetExtensions >= 2.1.0",
       "Schedule >= 1.0.0",
+      "Syncfusion.Xamarin.SfListView >= 16.4.0.42",
+      "Syncfusion.Xamarin.SfNumericUpDown >= 16.4.0.42",
       "Syncfusion.Xamarin.SfSchedule >= 16.4.0.42",
       "Xamarin.Android.Support.Design >= 27.0.2.1",
       "Xamarin.Android.Support.v4 >= 27.0.2.1",
@@ -1188,11 +1362,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Maria\\Desktop\\Schedule\\Schedule\\Schedule.Android\\Schedule.Android.csproj",
+      "projectUniqueName": "C:\\Users\\Maria\\source\\repos\\mariiakobzar\\Shedule\\Schedule\\Schedule\\Schedule.Android\\Schedule.Android.csproj",
       "projectName": "Schedule.Android",
-      "projectPath": "C:\\Users\\Maria\\Desktop\\Schedule\\Schedule\\Schedule.Android\\Schedule.Android.csproj",
+      "projectPath": "C:\\Users\\Maria\\source\\repos\\mariiakobzar\\Shedule\\Schedule\\Schedule\\Schedule.Android\\Schedule.Android.csproj",
       "packagesPath": "C:\\Users\\Maria\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Maria\\Desktop\\Schedule\\Schedule\\Schedule.Android\\obj\\",
+      "outputPath": "C:\\Users\\Maria\\source\\repos\\mariiakobzar\\Shedule\\Schedule\\Schedule\\Schedule.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "configFilePaths": [
@@ -1210,8 +1384,8 @@
       "frameworks": {
         "monoandroid81": {
           "projectReferences": {
-            "C:\\Users\\Maria\\Desktop\\Schedule\\Schedule\\Schedule\\Schedule.csproj": {
-              "projectPath": "C:\\Users\\Maria\\Desktop\\Schedule\\Schedule\\Schedule\\Schedule.csproj"
+            "C:\\Users\\Maria\\source\\repos\\mariiakobzar\\Shedule\\Schedule\\Schedule\\Schedule\\Schedule.csproj": {
+              "projectPath": "C:\\Users\\Maria\\source\\repos\\mariiakobzar\\Shedule\\Schedule\\Schedule\\Schedule\\Schedule.csproj"
             }
           }
         }
@@ -1223,6 +1397,14 @@
           "SQLiteNetExtensions": {
             "target": "Package",
             "version": "[2.1.0, )"
+          },
+          "Syncfusion.Xamarin.SfListView": {
+            "target": "Package",
+            "version": "[16.4.0.42, )"
+          },
+          "Syncfusion.Xamarin.SfNumericUpDown": {
+            "target": "Package",
+            "version": "[16.4.0.42, )"
           },
           "Syncfusion.Xamarin.SfSchedule": {
             "target": "Package",

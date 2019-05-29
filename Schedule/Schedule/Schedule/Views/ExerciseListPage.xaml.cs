@@ -13,7 +13,6 @@ namespace Schedule.Views
         public ExerciseListPage(ExerciseListViewModel exerciseViewModel)
         {
             InitializeComponent();
-
             BindingContext = viewModel = exerciseViewModel;
            // ExercisesList.BackgroundColor = viewModel.ColorType;
         }

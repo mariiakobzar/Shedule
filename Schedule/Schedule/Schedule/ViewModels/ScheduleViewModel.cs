@@ -6,6 +6,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace Schedule.ViewModels
@@ -73,14 +74,16 @@ namespace Schedule.ViewModels
             }
         }
 
+        public Command SetSelectedExerciseCommand { get; set; }
+
         public ScheduleViewModel()
         {
-
+            SetSelectedExerciseCommand = new Command(async () => await SetSelectedExercise(exercise: null));
         }
 
         public void InitializeExercices()
         {
-            var inctances = _databaseService.GetInstances(DateKey.DayOfYear).ToList();
+            var inctances = _databaseService.GetInstancesByDate(DateKey.DayOfYear).ToList();
             var allInstances = _databaseService.GetAllInstances().Where(x => x.Date.ToString() != "01.01.0001 0:00:00").ToList();
             Exercices = new ObservableCollection<Exercise>(inctances);
             AllExercices = new ObservableCollection<Exercise>(allInstances);
@@ -110,7 +113,7 @@ namespace Schedule.ViewModels
         }
 
 
-        public async Task ExecuteDeleteExerciseCommand()
+        public void ExecuteDeleteExerciseCommand()
         {
             if (SelectedExercise != null)
             {
@@ -118,5 +121,50 @@ namespace Schedule.ViewModels
                 UpdateExercisesList();
             }
         }
+
+        public async Task SetSelectedExercise(Exercise exercise)
+        {
+            SelectedExercise = exercise;
+        }
+
+        public void ExecuteSaveExerciseChanges()
+        {
+            Exercise oldExercise;
+            oldExercise = _databaseService.GetInstance(SelectedExercise.Id) ?? null;
+            if (oldExercise == null)
+            {
+                if (SelectedExercise.Weight == 0 && SelectedExercise.Reiteration == 0 && SelectedExercise.Touch == 0)
+                {
+                    return;
+                }
+                oldExercise = SelectedExercise;
+                _databaseService.InsertInstance(oldExercise);
+                return;
+            }
+            if (oldExercise != null)
+            {
+                oldExercise = SelectedExercise;
+                _databaseService.UpdateInstance(oldExercise); //update existed element
+                return;
+            }
+        }
+
+        public void CancelChanges()
+        {
+            Exercise oldExercise;
+            try
+            {
+                oldExercise = _databaseService.GetInstance(SelectedExercise.Id) ?? null;
+                //oldItem.ToRemove = false;
+                _databaseService.UpdateInstance(oldExercise);
+                return;
+            }
+            catch
+            {
+                //Item.ToRemove = true;
+                return;
+            }
+        }
+
     }
 }

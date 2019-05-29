@@ -16,6 +16,7 @@ namespace Schedule.Interfaces
         void CreateInstance(T obj);
         void UpdateInstance(T obj);
         void InsertInstance(T obj);
+        void InsertMany(IEnumerable<T> list);
         void DeleteInstance(T obj);
         T FindInstance(int id);
 

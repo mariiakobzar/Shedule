@@ -1,9 +1,7 @@
 ﻿using Schedule.Models;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
@@ -54,7 +52,16 @@ namespace Schedule.ViewModels
             }
         }
 
-        public Color ColorType { get; set; }
+        private Color _colorType;
+        public Color ColorType
+        {
+            get { return _colorType; }
+            set
+            {
+                _colorType = value;
+                OnPropertyChanged("ColorType");
+            }
+        }
 
         //public Command SaveExerciseCommand { get; set; }
 
@@ -63,21 +70,32 @@ namespace Schedule.ViewModels
             Exercises = new ObservableCollection<Exercise>();
             //SaveExerciseCommand = new Command(async () => await ExecuteSaveExerciseCommand());
             DateKey = DateTime.Now;
-            FillExercises();
         }
 
         public ExerciseListViewModel(ExerciseType exerciseType, DateTime selectedDate, Color color)
         {
             SelectedType = exerciseType.TypeName;
             DateKey = selectedDate;
-            FillExercises();
             ColorType = color;
+            FillExercises();
+
             //SaveExerciseCommand = new Command(async () => await ExecuteSaveExerciseCommand());
+        }
+
+        private void FillExercisesByAll()
+        {
+            var inctances = _databaseService.GetAllInstances();
+            Exercises = new ObservableCollection<Exercise>(inctances);
         }
 
         private void FillExercises()
         {
-            var inctances = _databaseService.GetAllInstances().Where(x => x.Type == SelectedType);
+            var inctances = _databaseService.GetAllInstances().Where(x => x.Type == SelectedType).ToList();
+            foreach (var x in inctances)
+            {
+                x.ColorHex = GetHexString(ColorType);
+            }
+
             Exercises = new ObservableCollection<Exercise>(inctances);
         }
 
@@ -94,7 +112,8 @@ namespace Schedule.ViewModels
                     Name = SelectedExercise.Name,
                     Type = SelectedExercise.Type,
                     Description = SelectedExercise.Description,
-                    ColorHex = exerciseColor
+                    ColorHex = exerciseColor,
+                    ImagePath = SelectedExercise.ImagePath
                 };
 
                 _databaseService.InsertInstance(newExercise);

@@ -1,1 +1,1 @@
-<resources><string name="library_name">Com.Syncfusion.Schedule</string><string name="No_Appointments">No Events</string><string name="all_day">All Day</string><string name="NoSelectedDate">No Selected Date</string></resources>
+<resources><string name="Hello">Hello World, Click Me!</string><string name="ApplicationName">$projectname$</string><string name="Load_More">Load More</string></resources>
