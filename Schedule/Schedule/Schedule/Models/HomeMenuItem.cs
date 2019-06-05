@@ -6,8 +6,8 @@ namespace Schedule.Models
 {
     public enum MenuItemType
     {
+        //Browse,
         Schedule,
-        Browse,
         About
     }
     public class HomeMenuItem

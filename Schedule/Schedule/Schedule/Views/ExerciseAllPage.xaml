@@ -61,11 +61,11 @@
                                            VerticalOptions="CenterAndExpand" />
                                         </StackLayout>
                                         <Switch
-                                    x:Name="itemSwitch"
-                                    HorizontalOptions="EndAndExpand"
-                                    VerticalOptions="Center"
-                                    IsToggled="{Binding IsSelected, Mode=TwoWay}"
-                                    IsEnabled="True"/>
+                                            x:Name="itemSwitch"
+                                            HorizontalOptions="EndAndExpand"
+                                            VerticalOptions="Center"
+                                            IsToggled="{Binding IsSelected, Mode=TwoWay}"
+                                            IsEnabled="True"/>
                                     </StackLayout>
                                 </Frame>
                             </ContentView>

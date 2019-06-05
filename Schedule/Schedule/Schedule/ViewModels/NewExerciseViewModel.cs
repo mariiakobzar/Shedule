@@ -78,9 +78,6 @@ namespace Schedule.ViewModels
                 _databaseService.InsertInstance(newExercise);
                 _databaseService.UpdateTable();
             }
-
-            var items = _databaseService.GetAllInstances().ToList();
-
         }
     }
 }

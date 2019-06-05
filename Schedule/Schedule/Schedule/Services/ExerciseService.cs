@@ -20,7 +20,8 @@ namespace Schedule.Services
             var dbPath = Constant.DbFilePath;
             db = new SQLiteConnection(dbPath);
             db.CreateTable<Exercise>();
-            db.DeleteAll<Exercise>();
+            //db.DeleteAll<Exercise>();
+            isInitialized = db.Table<Exercise>().Any() ? true : false;
         }
 
         public ExerciseService()

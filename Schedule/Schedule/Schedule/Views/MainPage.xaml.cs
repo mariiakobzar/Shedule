@@ -10,21 +10,14 @@ namespace Schedule.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MainPage : MasterDetailPage
     {
-        Dictionary<int, NavigationPage> MenuPages = new Dictionary<int, NavigationPage>();
+        public Dictionary<int, NavigationPage> MenuPages = new Dictionary<int, NavigationPage>();
+
         public MainPage()
         {
             InitializeComponent();
-
             MasterBehavior = MasterBehavior.Popover;
 
-            MenuPages.Add((int)MenuItemType.Browse, (NavigationPage)Detail);
-
-            IsPresentedChanged += MainPage_IsPresentedChanged;
-        }
-
-        private void MainPage_IsPresentedChanged(object sender, EventArgs e)
-        {
-
+            MenuPages.Add((int)MenuItemType.Schedule, (NavigationPage)Detail);
         }
 
         public async Task NavigateFromMenu(int id)
@@ -33,11 +26,11 @@ namespace Schedule.Views
             {
                 switch (id)
                 {
+                    //case (int)MenuItemType.Browse:
+                    //    MenuPages.Add(id, new NavigationPage(new SchedulePage()));
+                    //    break;
                     case (int)MenuItemType.Schedule:
                         MenuPages.Add(id, new NavigationPage(new ExerciseAllPage()));
-                        break;
-                    case (int)MenuItemType.Browse:
-                        MenuPages.Add(id, new NavigationPage(new SchedulePage()));
                         break;
                     case (int)MenuItemType.About:
                         MenuPages.Add(id, new NavigationPage(new AboutPage()));

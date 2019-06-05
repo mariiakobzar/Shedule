@@ -16,10 +16,16 @@ namespace Schedule.Views
             BindingContext = viewModel = new ExerciseAllViewModel();
         }
 
+        public ExerciseAllPage(ExerciseAllViewModel exerciseAllViewModel)
+        {
+            InitializeComponent();
+            BindingContext = viewModel = exerciseAllViewModel;
+        }
+
         private async void SaveButtonClicked(object sender, EventArgs e)
         {
             await viewModel.ExecuteSaveSelectedExerciseCommand();
-            await Navigation.PushAsync(new SchedulePage());
+            await Navigation.PopToRootAsync();
         }
     }
 }

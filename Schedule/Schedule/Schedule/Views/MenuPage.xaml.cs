@@ -18,8 +18,8 @@ namespace Schedule.Views
 
             menuItems = new List<HomeMenuItem>
             {
-                new HomeMenuItem {Id = MenuItemType.Schedule, Title="Усі вправи" },
-                new HomeMenuItem {Id = MenuItemType.Browse, Title="Календар" },
+                //new HomeMenuItem {Id = MenuItemType.Schedule, Title="Усі вправи" },
+                new HomeMenuItem {Id = MenuItemType.Schedule, Title="Календар" },
                 new HomeMenuItem {Id = MenuItemType.About, Title="Про додаток" }
             };
 

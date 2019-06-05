@@ -26,10 +26,10 @@ namespace Schedule.Views {
         private global::Xamarin.Forms.ContentView popupView;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        private global::Syncfusion.SfNumericUpDown.XForms.SfNumericUpDown numericWeight;
+        private global::Syncfusion.SfNumericUpDown.XForms.SfNumericUpDown numericTouch;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        private global::Syncfusion.SfNumericUpDown.XForms.SfNumericUpDown numericTouch;
+        private global::Syncfusion.SfNumericUpDown.XForms.SfNumericUpDown numericWeight;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private global::Syncfusion.SfNumericUpDown.XForms.SfNumericUpDown numericReiteration;
@@ -49,8 +49,8 @@ namespace Schedule.Views {
             addButton = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.ToolbarItem>(this, "addButton");
             editView = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.AbsoluteLayout>(this, "editView");
             popupView = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.ContentView>(this, "popupView");
-            numericWeight = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Syncfusion.SfNumericUpDown.XForms.SfNumericUpDown>(this, "numericWeight");
             numericTouch = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Syncfusion.SfNumericUpDown.XForms.SfNumericUpDown>(this, "numericTouch");
+            numericWeight = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Syncfusion.SfNumericUpDown.XForms.SfNumericUpDown>(this, "numericWeight");
             numericReiteration = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Syncfusion.SfNumericUpDown.XForms.SfNumericUpDown>(this, "numericReiteration");
             schedule = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Syncfusion.SfSchedule.XForms.SfSchedule>(this, "schedule");
             ItemsListView = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Syncfusion.ListView.XForms.SfListView>(this, "ItemsListView");

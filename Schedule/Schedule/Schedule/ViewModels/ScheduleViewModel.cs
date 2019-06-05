@@ -1,12 +1,8 @@
-﻿using Schedule.Constants;
-using Schedule.Models;
+﻿using Schedule.Models;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace Schedule.ViewModels
@@ -52,6 +48,8 @@ namespace Schedule.ViewModels
             }
         }
 
+
+
         private DateTime dateKey;
         public DateTime DateKey
         {
@@ -75,10 +73,12 @@ namespace Schedule.ViewModels
         }
 
         public Command SetSelectedExerciseCommand { get; set; }
+        //public Command CancelSelectedExerciseCommand { get; set; }
 
         public ScheduleViewModel()
         {
             SetSelectedExerciseCommand = new Command(async () => await SetSelectedExercise(exercise: null));
+            //CancelSelectedExerciseCommand = new Command(async () => await CancelChanges());
         }
 
         public void InitializeExercices()
@@ -111,7 +111,6 @@ namespace Schedule.ViewModels
 
             SetColors();
         }
-
 
         public void ExecuteDeleteExerciseCommand()
         {
@@ -156,7 +155,8 @@ namespace Schedule.ViewModels
             {
                 oldExercise = _databaseService.GetInstance(SelectedExercise.Id) ?? null;
                 //oldItem.ToRemove = false;
-                _databaseService.UpdateInstance(oldExercise);
+                //_databaseService.UpdateInstance(oldExercise);
+                SelectedExercise = oldExercise;
                 return;
             }
             catch

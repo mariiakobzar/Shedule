@@ -584,14 +584,14 @@
     "Syncfusion.Licensing/16.4.0.42": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-zHpwuJogAuKZnPPYFEo+xipoJLfAk997zUMPQmFjF66G3w0G/KnoFWmHoD+wflw+VjGJsYB9OulwYbc3QfRo9A==",
+      "sha512": "sha512-x0JR7YiHtbAtutGqDuaxbe4dRQgue7sun1zc8fSYlBJfiaDsdAiaxhOHD+AuADHwAD5PjzWIymf579/s9ui6bw==",
       "path": "syncfusion.licensing/16.4.0.42",
       "hashPath": "syncfusion.licensing.16.4.0.42.nupkg.sha512"
     },
     "Syncfusion.Xamarin.Core/16.4.0.42": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-me0OGW9xik7v9+WOzKFYLS3Mnyafc/RXlxkN6vOnLJiZEsPK7uzLhnd3LGAimCTN6ZSm1ehIPE/diZLA9yeQLQ==",
+      "sha512": "sha512-EJjW2BOxJ1xSI5k4y+qDTyBfR+Ho9sS9rIN+HSB9bC7PBL9IKYF9/KsuMS6O1stZm3Ud/IJEab2kLYCRf9Pu+w==",
       "path": "syncfusion.xamarin.core/16.4.0.42",
       "hashPath": "syncfusion.xamarin.core.16.4.0.42.nupkg.sha512"
     },
@@ -626,7 +626,7 @@
     "Syncfusion.Xamarin.SfSchedule/16.4.0.42": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-zstLpy7aakDtEPXNsaMnkvX58oNd9491ZU4E7yjmNwNEIj43JSzZkT0V39NCLrnhtvO65XRxjd5r/FsxLl5qOQ==",
+      "sha512": "sha512-5j6IWtegAE8/xsD1rXVdIS54Km26Ah90vtBX561/7pltdjRE+36uV85laBDDGUBr0t7j0ccNHQD7P4ohYr5OBA==",
       "path": "syncfusion.xamarin.sfschedule/16.4.0.42",
       "hashPath": "syncfusion.xamarin.sfschedule.16.4.0.42.nupkg.sha512"
     },

@@ -138,7 +138,18 @@ namespace Schedule.Views
         private void NumericWeight_ValueChanged(object sender, Syncfusion.SfNumericUpDown.XForms.ValueEventArgs e)
         {
             var newValue = e.Value;
-            viewmodel.SelectedExercise.Weight = (int)newValue;
+            //viewmodel.SelectedExercise.Weight = (int)newValue;
+        }
+
+
+
+        private void ItemsListView_ItemTapped(object sender, Syncfusion.ListView.XForms.ItemTappedEventArgs e)
+        {
+            OnAppearing();
+            var item = e.ItemData as Exercise;
+            viewmodel.SelectedExercise = item;
+            popupView.IsVisible = true;
+            editView.RaiseChild(popupView);
         }
 
         private void SaveButton_Clicked(object sender, EventArgs e)
@@ -146,20 +157,15 @@ namespace Schedule.Views
             viewmodel.ExecuteSaveExerciseChanges();
             editView.LowerChild(popupView);
             popupView.IsVisible = false;
-        }
-
-        private void ItemsListView_ItemTapped(object sender, Syncfusion.ListView.XForms.ItemTappedEventArgs e)
-        {
-            var item = e.ItemData as Exercise;
-            viewmodel.SelectedExercise = item;
-            popupView.IsVisible = true;
-            editView.RaiseChild(popupView);
+            OnAppearing();
         }
 
         private void CancelButton_Clicked(object sender, EventArgs e)
         {
+            viewmodel.CancelChanges();
             editView.LowerChild(popupView);
             popupView.IsVisible = false;
+            OnAppearing();
         }
 
 

@@ -1,10 +1,6 @@
 ﻿using Schedule.Models;
 using Schedule.ViewModels;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -42,6 +38,11 @@ namespace Schedule.Views
         private async void AddButton_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new NewExercisePage());
+        }
+
+        private async void AllButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new ExerciseAllPage(new ExerciseAllViewModel(viewmodel.DateKey)));
         }
     }
 }

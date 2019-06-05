@@ -359,9 +359,5 @@ C:\Users\Антон\Desktop\Diplom\Schedule\Schedule\Schedule\Schedule.Android\o
 C:\Users\Антон\Desktop\Diplom\Schedule\Schedule\Schedule\Schedule.Android\obj\Debug\81\res\drawable\schedule2.png
 C:\Users\Антон\Desktop\Diplom\Schedule\Schedule\Schedule\Schedule.Android\obj\Debug\81\res\drawable\schedule.png
 C:\Users\Антон\Desktop\Diplom\Schedule\Schedule\Schedule\Schedule\bin\Debug\netstandard2.0\Schedule.dll
-C:\Users\Maria\Desktop\Schedule\Schedule\Schedule.Android\obj\Debug\81\MonoAndroid,Version=v8.1.AssemblyAttributes.cs
-C:\Users\Maria\Desktop\Schedule\Schedule\Schedule.Android\obj\Debug\81\Schedule.Android.csprojAssemblyReference.cache
-C:\Users\Maria\Desktop\Schedule\Schedule\Schedule.Android\obj\Debug\81\libraryimports.cache.stamp
-C:\Users\Maria\Desktop\Schedule\Schedule\Schedule.Android\obj\Debug\81\res.flag
-C:\Users\Maria\Desktop\Schedule\Schedule\Schedule.Android\obj\Debug\81\Schedule.Android.dll
-C:\Users\Maria\Desktop\Schedule\Schedule\Schedule.Android\obj\Debug\81\Schedule.Android.pdb
+C:\Users\Антон\Desktop\Diplom\Schedule\Schedule\Schedule\Schedule.Android\bin\Debug\Schedule.dll.mdb
+C:\Users\Антон\Desktop\Diplom\Schedule\Schedule\Schedule\Schedule.Android\obj\Debug\81\linksrc\Schedule.dll.mdb

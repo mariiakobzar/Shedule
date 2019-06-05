@@ -8,7 +8,7 @@ using Xamarin.Forms;
 
 namespace Schedule.ViewModels
 {
-    class ExerciseAllViewModel : BaseViewModel
+    public class ExerciseAllViewModel : BaseViewModel
     {
         private DateTime _dateKey;
         public DateTime DateKey
@@ -74,17 +74,40 @@ namespace Schedule.ViewModels
         public ExerciseAllViewModel()
         {
             DateKey = DateTime.Now;
-            FillExercisesByAll();
+            FillExercises();
             FillColors();
-            _defaultExercises = new ObservableCollection<Exercise>(_databaseService.GetAllInstances());
-
             SaveExerciseCommand = new Command(async () => await ExecuteSaveSelectedExerciseCommand());
         }
 
-        private void FillExercisesByAll()
+        public ExerciseAllViewModel(DateTime dateTime)
         {
-            var inctances = Constant.DefaultExercises;
-            AllExercises = new ObservableCollection<Exercise>(inctances);
+            DateKey = dateTime;
+            FillExercises();
+            FillColors();
+            SaveExerciseCommand = new Command(async () => await ExecuteSaveSelectedExerciseCommand());
+        }
+
+        private void FillExercises()
+        {
+            _defaultExercises = new ObservableCollection<Exercise>(_databaseService.GetAllInstances().OrderBy(x => x.Type));
+            if (_defaultExercises.Any())
+            {
+                AllExercises = new ObservableCollection<Exercise>(_defaultExercises);
+                ResetSelection();
+            }
+            else
+            {
+                AllExercises = new ObservableCollection<Exercise>(Constant.DefaultExercises);
+                ResetSelection();
+            }
+        }
+
+        private void ResetSelection()
+        {
+            foreach (var item in AllExercises)
+            {
+                item.IsSelected = false;
+            }
         }
 
         private void FillColors()
@@ -94,8 +117,8 @@ namespace Schedule.ViewModels
             {
                 item.Color = types.Where(x => x.TypeName == item.Type).First().TypeColor;
                 item.ColorHex = Constant.GetHexString(item.Color);
-                item.Date = DateTime.Now;
-                item.DateId = DateTime.Now.DayOfYear;
+                item.Date = DateKey;
+                item.DateId = DateKey.DayOfYear;
             }
         }
 
@@ -113,7 +136,6 @@ namespace Schedule.ViewModels
             if (string.IsNullOrWhiteSpace(SearchText))
             {
                 AllExercises = _defaultExercises;
-                return;
             }
             else
             {

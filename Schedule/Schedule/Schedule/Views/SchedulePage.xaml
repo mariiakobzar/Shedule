@@ -18,21 +18,24 @@
                     <StackLayout Orientation="Vertical" HeightRequest="400" WidthRequest="300" BackgroundColor="White">
                         <Label Text="Вага:"
                                Margin="20,15,5,2"/>
-                        <numeric:SfNumericUpDown x:Name="numericWeight"
-                                                 Value="{Binding SelectedExercise.Weight}"
+                        <numeric:SfNumericUpDown x:Name="numericTouch"
+                                                 Minimum="0"
+                                                 Value="{Binding SelectedExercise.Touch, Mode=TwoWay}"
                                                  Margin="20,0,60,2"/>
                         <Label Text="Підхід:"
                                Margin="20,15,5,2"/>
-                        <numeric:SfNumericUpDown x:Name="numericTouch"
-                                                 Value="{Binding SelectedExercise.Touch}"
+                        <numeric:SfNumericUpDown x:Name="numericWeight"
+                                                 Minimum="0"
+                                                 Value="{Binding SelectedExercise.Weight, Mode=TwoWay}"
                                                  Margin="20,0,60,2"/>
                         <Label Text="Повторення:"
                                Margin="20,15,5,2"/>
                         <numeric:SfNumericUpDown x:Name="numericReiteration"
-                                                 Value="{Binding SelectedExercise.Reiteration}"
+                                                 Minimum="0"
+                                                 Value="{Binding SelectedExercise.Reiteration, Mode=TwoWay}"
                                                  Margin="20,0,60,2"/>
                         <Button Margin="20,0,20,0" Text="Зберегти" Clicked="SaveButton_Clicked"></Button>
-                        <Button Margin="20,0,20,0" Text="Відмінити" Clicked="CancelButton_Clicked"></Button>
+                        <Button Margin="20,0,20,0" Text="Відмінити" Clicked="CancelButton_Clicked" Command="{Binding CancelSelectedExerciseCommand}"></Button>
                     </StackLayout>
                 </StackLayout>
             </ContentView>
@@ -41,11 +44,21 @@
                     <RowDefinition Height="6*"/>
                     <RowDefinition Height="4*"/>
                 </Grid.RowDefinitions>
-                <schedule:SfSchedule x:Name="schedule" Grid.Row="0" ScheduleView="MonthView" VerticalOptions="FillAndExpand">
+                <schedule:SfSchedule x:Name="schedule"
+                                     Grid.Row="0"
+                                     ScheduleView="MonthView"
+                                     Locale="uk"
+                                     VerticalOptions="FillAndExpand">
                     <schedule:SfSchedule.MonthViewSettings>
                         <schedule:MonthViewSettings AppointmentDisplayMode="Indicator">
                         </schedule:MonthViewSettings>
                     </schedule:SfSchedule.MonthViewSettings>
+
+                    <schedule:SfSchedule.DragDropSettings>
+                        <schedule:DragDropSettings AllowNavigate="True" AllowScroll="true" ShowTimeIndicator="true">
+                        </schedule:DragDropSettings>
+                    </schedule:SfSchedule.DragDropSettings>
+
                 </schedule:SfSchedule>
                 <syncfusion:SfListView x:Name="ItemsListView"
                                        SelectionMode="None"

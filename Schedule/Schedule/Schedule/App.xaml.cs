@@ -14,8 +14,6 @@ namespace Schedule
             Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("NzQ5ODdAMzEzNjJlMzQyZTMwR3BFaUJxUG1Ha3RDZ0NIZ0NVVytRczFaWlVhY09xUmVCa3RKc1FIcDVoYz0=");
 
             InitializeComponent();
-
-
             MainPage = new MainPage();
         }
 

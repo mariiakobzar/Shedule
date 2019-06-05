@@ -4,8 +4,11 @@
              xmlns:customcontrols="clr-namespace:Schedule.CustomControls;assembly=Schedule"
              x:Class="Schedule.Views.ExerciseTypesPage">
     <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="allButton"
+                     Text="Усі вправи"
+                     Clicked="AllButton_Clicked"/>
         <ToolbarItem x:Name="addButton"
-                     Text="+"
+                     Text="Нова вправа"
                      Clicked="AddButton_Clicked"/>
     </ContentPage.ToolbarItems>
     <ListView x:Name="ListValues"
