@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:customcontrols="clr-namespace:Schedule.CustomControls;assembly=Schedule"
+             xmlns:syncfusion="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
+             xmlns:xcontrols="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms"
+             x:Class="Schedule.Views.ExerciseAllPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="SaveButton"
+                     Text="ДОДАТИ"
+                     Clicked="SaveButtonClicked"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout>
+            <SearchBar x:Name="SearchBar"
+                       HeightRequest="60"
+                       Placeholder="Пошук"
+                       Margin="0,0,0,0"
+                       Text="{Binding Path=SearchText, Mode=TwoWay}"/>
+            <syncfusion:SfListView x:Name="ExercisesList"
+                                   SelectionMode="None"
+                                   ItemsSource="{Binding AllExercises}"
+                                   AllowSwiping="True"
+                                   ItemSize="85"
+                                   SwipeEnded="ItemsListView_SwipeEnded">
+                <syncfusion:SfListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ContentView Padding="5">
+                                <Frame OutlineColor="White" HasShadow="True" Padding="3" >
+                                    <StackLayout Orientation="Horizontal">
+                                        <customcontrols:RoundedImageView
+                                        x:Name="roundedView"
+                                        
+                                        FillColor="{Binding Color}"
+                                        Source="{Binding Converter=FromPathToImageConverter, Path=ImagePath, Mode=OneWay}"
+                                        HeightRequest="80"
+                                        WidthRequest="80"
+                                        VerticalOptions="Center"
+                                        HorizontalOptions="Center"/>
+                                        <StackLayout Margin="0,8,0,8">
+                                            <Label Text="{Binding Name}"
+                                           FontSize="16"
+                                           VerticalOptions="StartAndExpand" />
+                                            <Label Text="{Binding Type}"
+                                                   TextColor="{Binding Converter=FromHexToColorConverter, Path=ColorHex, Mode=OneWay}"
+                                                   FontSize="14"
+                                                   
+                                           VerticalOptions="Center" />
+                                        </StackLayout>
+                                        <!--<ImageButton x:Name="editButton"
+                                                               Source="@drawable/editButton1.png"
+                                                               HorizontalOptions="EndAndExpand"
+                                                               Margin="0,0,5,0"
+                                                               VerticalOptions="Center"
+                                                               HeightRequest="40"
+                                                               BackgroundColor="Snow"
+                                                               WidthRequest="40"/>-->
+                                        <!--<Switch
+                                            x:Name="itemSwitch"
+                                            HorizontalOptions="EndAndExpand"
+                                            VerticalOptions="Center"
+                                            IsToggled="{Binding IsSelected, Mode=TwoWay}"
+                                            IsEnabled="True"/>-->
+                                        <xcontrols:CheckBox x:Name="checkBox"
+                                                               Checked="{Binding IsSelected,Mode=TwoWay}"
+                                                             Margin="0,0,15,0"
+                                                            HorizontalOptions="EndAndExpand"
+                                                            VerticalOptions="Center"
+                                                            IsEnabled="True"/>
+                                    </StackLayout>
+                                </Frame>
+                            </ContentView>
+                        </ViewCell>
+                    </DataTemplate>
+                </syncfusion:SfListView.ItemTemplate>
+                <syncfusion:SfListView.RightSwipeTemplate>
+                    <DataTemplate x:Name="RightSwipeTemplate">
+                        <Grid BackgroundColor="#DC595F" HorizontalOptions="Fill" VerticalOptions="Fill">
+                            <Grid VerticalOptions="Center" HorizontalOptions="Center">
+                                <Image Grid.Column="0"
+                                   Grid.Row="0"
+                                   HeightRequest="30"
+                                   WidthRequest="30"
+                                   BackgroundColor="Transparent"
+                                   BindingContextChanged="Image_BindingContextChanged"
+                                   Source="@drawable/Delete.png"/>
+                            </Grid>
+                        </Grid>
+                    </DataTemplate>
+                </syncfusion:SfListView.RightSwipeTemplate>
+            </syncfusion:SfListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

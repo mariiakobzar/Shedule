@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:schedule="clr-namespace:Syncfusion.SfSchedule.XForms;assembly=Syncfusion.SfSchedule.XForms"
+             xmlns:syncfusion="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
+             xmlns:numeric="clr-namespace:Syncfusion.SfNumericUpDown.XForms;assembly=Syncfusion.SfNumericUpDown.XForms"
+             xmlns:customcontrols="clr-namespace:Schedule.CustomControls;assembly=Schedule"
+             xmlns:xcontrols="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms"
+             
+             x:Class="Schedule.Views.SchedulePage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="addButton"
+                 Text="+"
+                 Clicked="AddNewExerciseClicked"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <AbsoluteLayout x:Name="editView" Padding="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <ContentView x:Name="popupView" BackgroundColor="#C0808080" Padding="10, 0" IsVisible="false" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All">
+                <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+                    <StackLayout Orientation="Vertical" HeightRequest="450" WidthRequest="300" BackgroundColor="White">
+                        <Label Text="Повторення:"
+                               Margin="20,15,5,2"/>
+                        <numeric:SfNumericUpDown x:Name="numericReiteration"
+                                                 Minimum="0"
+                                                 Value="{Binding SelectedExercise.Reiteration, Mode=TwoWay}"
+                                                 Margin="20,0,60,2"/>
+                        <Label Text="Вага:"
+                               Margin="20,15,5,2"/>
+                        <numeric:SfNumericUpDown x:Name="numericWeight"
+                                                 Minimum="0"
+                                                 Value="{Binding SelectedExercise.Weight, Mode=TwoWay}"
+                                                 Margin="20,0,60,0"/>
+                        <Label Text="Підходи:"
+                               Margin="20,15,5,2"/>
+                        <numeric:SfNumericUpDown x:Name="numericTouch"
+                                     Minimum="0"
+                                     Value="{Binding SelectedExercise.Touch, Mode=TwoWay}"
+                                     Margin="20,0,60,0"/>
+                        <xcontrols:CheckBox x:Name="checkBox"
+                                            Checked="{Binding SelectedExercise.IsDone,Mode=TwoWay}"
+                                            UncheckedText="Не виконано"
+                                            CheckedText="Виконано"
+                                            Margin="20,0,20,0">
+                        </xcontrols:CheckBox>
+                        <!--<customcontrols:CustomSwitch x:Name="customSwitch"
+                                                     Margin="20,0,20,2"
+                                                     Text="Увімкни якщо виконав вправу"
+                                                     Value="{Binding SelectedExercise.IsDone,Mode=TwoWay}"/>-->
+                        <Button Margin="20,0,20,0" Text="Зберегти"  TextColor="White"  Clicked="SaveButton_Clicked" BackgroundColor="SandyBrown"></Button>
+                        <Button Margin="20,0,20,0" Text="Відмінити" TextColor="White" Clicked="CancelButton_Clicked"  Command="{Binding CancelSelectedExerciseCommand}" BackgroundColor="SandyBrown"></Button>
+                    </StackLayout>
+                </StackLayout>
+            </ContentView>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="6*"/>
+                    <RowDefinition Height="4*"/>
+                </Grid.RowDefinitions>
+                <schedule:SfSchedule x:Name="schedule"
+                                    
+                             Opacity="0.85"
+                             Grid.Row="0"
+                             ScheduleView="MonthView"
+                             Locale="uk"
+                             VerticalOptions="FillAndExpand">
+                    <schedule:SfSchedule.MonthViewSettings>
+                        <schedule:MonthViewSettings  AppointmentDisplayMode="Indicator" >
+                        </schedule:MonthViewSettings>
+                    </schedule:SfSchedule.MonthViewSettings>
+                </schedule:SfSchedule>
+                <syncfusion:SfListView x:Name="ItemsListView"
+                                       SelectionMode="None"
+                                       Grid.Row="1"
+                                       ItemSpacing="5"
+                                       ItemSize="80"
+                                       ItemsSource="{Binding Exercices}"
+                                       ItemTapped="ItemsListView_ItemTapped"
+                                       AllowSwiping="True"
+                                       VerticalOptions="FillAndExpand"
+                                       SwipeEnded="ItemsListView_SwipeEnded">
+                    <syncfusion:SfListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell x:Name="viewCell">
+                                <ContentView>
+                                    <Frame HasShadow="True" Padding="2" Margin="2">
+                                        <StackLayout Orientation="Horizontal">
+                                            <customcontrols:RoundedImageView
+                                                x:Name="roundedView"
+                                                BorderThickness="1"
+                                                Source="{Binding Converter=FromPathToImageConverter, Path=ImagePath, Mode=OneWay}"
+                                                FillColor="{Binding Converter=FromHexToColorConverter, Path=ColorHex, Mode=OneWay}"
+                                                HeightRequest="80"
+                                                WidthRequest="80"
+                                                VerticalOptions="Center"
+                                                HorizontalOptions="Center"/>
+                                            <StackLayout VerticalOptions="StartAndExpand" Padding="10">
+                                                <Label Text="{Binding Name}"
+                                                       BackgroundColor="{Binding Color}"
+                                                       LineBreakMode="NoWrap"
+                                                       Style="{DynamicResource ListItemTextStyle}"
+                                                       FontSize="16" />
+                                                <Label Text="{Binding NumbersFormatted}"/>
+                                                <Label Text="{Binding Description}"
+                                                       LineBreakMode="NoWrap"
+                                                       Style="{DynamicResource ListItemDetailTextStyle}"
+                                                       FontSize="13"/>
+                                            </StackLayout>
+                                            <!--<Switch
+                                                x:Name="itemSwitch"
+                                                HorizontalOptions="EndAndExpand"
+                                                VerticalOptions="Center"
+                                                IsToggled="{Binding IsDone, Mode=TwoWay}"
+                                                IsEnabled="False"/>-->
+                                            <xcontrols:CheckBox x:Name="checkBox"
+                                                               HorizontalOptions="EndAndExpand"
+                                                                Margin="0,0,15,0"
+                                                               Checked="{Binding IsDone,Mode=OneWay}"
+                                                               IsEnabled="False">
+                                            </xcontrols:CheckBox>
+                                        </StackLayout>
+                                    </Frame>
+                                </ContentView>
+                            </ViewCell>
+                        </DataTemplate>
+                    </syncfusion:SfListView.ItemTemplate>
+                    <syncfusion:SfListView.RightSwipeTemplate>
+                        <DataTemplate x:Name="RightSwipeTemplate">
+                            <Grid BackgroundColor="#DC595F" HorizontalOptions="Fill" VerticalOptions="Fill">
+                                <Grid VerticalOptions="Center" HorizontalOptions="Center">
+                                    <Image Grid.Column="0"
+                                           Grid.Row="0"
+                                           HeightRequest="30"
+                                           WidthRequest="30"
+                                           BackgroundColor="Transparent"
+                                           BindingContextChanged="Image_BindingContextChanged"
+                                           Source="@drawable/Delete.png"/>
+                                </Grid>
+                            </Grid>
+                        </DataTemplate>
+                    </syncfusion:SfListView.RightSwipeTemplate>
+                </syncfusion:SfListView>
+            </Grid>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

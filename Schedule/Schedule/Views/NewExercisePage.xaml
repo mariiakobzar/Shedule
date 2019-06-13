@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Schedule.Views.NewExercisePage">
+    <ContentPage.Content>
+        <ContentView>
+            <StackLayout>
+                <Entry Text="{Binding Name}" FontSize="19" Placeholder="Ім'я вправи" Margin="45,75,45,10" />
+                <!--<Entry Text="{Binding Description}" Placeholder="Description"/>-->
+                <Picker ItemsSource="{Binding Types}" FontSize="19" SelectedItem="{Binding SelectedType}" Margin="45,10,45,10" Title="Тип вправи"/>
+                <Button x:Name="saveButton"  Text="Зберегти" TextColor="White" Clicked="SaveButton_Clicked" BackgroundColor="SandyBrown" Margin="45,25,45,5"/>
+                <Button x:Name="cancelButton"  Text="Відмінити" TextColor="White" Clicked="CancelButton_Clicked" BackgroundColor="SandyBrown" Margin="45,10,45,5"/>
+            </StackLayout>
+        </ContentView>
+    </ContentPage.Content>
+</ContentPage>
