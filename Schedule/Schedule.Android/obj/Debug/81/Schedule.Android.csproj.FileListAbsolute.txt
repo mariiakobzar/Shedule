@@ -51,6 +51,7 @@ C:\Users\Антон\Desktop\Diplom\Schedule\Schedule\Schedule\Schedule.Android\o
 C:\Users\Антон\Desktop\Diplom\Schedule\Schedule\Schedule\Schedule.Android\obj\Debug\81\res\drawable\schedulebackground.png
 C:\Users\Антон\Desktop\Diplom\Schedule\Schedule\Schedule\Schedule.Android\obj\Debug\81\res\drawable\marylogo.png
 C:\Users\Антон\Desktop\Diplom\Schedule\Schedule\Schedule\Schedule.Android\obj\Debug\81\res\drawable\editbutton1.png
+C:\Users\Антон\Desktop\Diplom\Schedule\Schedule\Schedule\Schedule.Android\obj\Debug\81\res\drawable\splashscreen.png
 C:\Users\Антон\Desktop\Diplom\Schedule\Schedule\Schedule\Schedule.Android\obj\Debug\81\R.cs.flag
 C:\Users\Антон\Desktop\Diplom\Schedule\Schedule\Schedule\Schedule.Android\obj\Debug\81\R.txt
 C:\Users\Антон\Desktop\Diplom\Schedule\Schedule\Schedule\Schedule.Android\obj\Debug\81\uploadflags.txt

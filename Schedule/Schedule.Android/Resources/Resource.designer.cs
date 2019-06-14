@@ -3820,26 +3820,26 @@ namespace Schedule.Droid
 			// aapt resource value: 0x7f020056
 			public const int avd_hide_password = 2130837590;
 			
-			// aapt resource value: 0x7f020148
-			public const int avd_hide_password_1 = 2130837832;
-			
 			// aapt resource value: 0x7f020149
-			public const int avd_hide_password_2 = 2130837833;
+			public const int avd_hide_password_1 = 2130837833;
 			
 			// aapt resource value: 0x7f02014a
-			public const int avd_hide_password_3 = 2130837834;
+			public const int avd_hide_password_2 = 2130837834;
+			
+			// aapt resource value: 0x7f02014b
+			public const int avd_hide_password_3 = 2130837835;
 			
 			// aapt resource value: 0x7f020057
 			public const int avd_show_password = 2130837591;
 			
-			// aapt resource value: 0x7f02014b
-			public const int avd_show_password_1 = 2130837835;
-			
 			// aapt resource value: 0x7f02014c
-			public const int avd_show_password_2 = 2130837836;
+			public const int avd_show_password_1 = 2130837836;
 			
 			// aapt resource value: 0x7f02014d
-			public const int avd_show_password_3 = 2130837837;
+			public const int avd_show_password_2 = 2130837837;
+			
+			// aapt resource value: 0x7f02014e
+			public const int avd_show_password_3 = 2130837838;
 			
 			// aapt resource value: 0x7f020058
 			public const int biceps = 2130837592;
@@ -4516,11 +4516,11 @@ namespace Schedule.Droid
 			// aapt resource value: 0x7f020138
 			public const int notification_icon_background = 2130837816;
 			
-			// aapt resource value: 0x7f020146
-			public const int notification_template_icon_bg = 2130837830;
-			
 			// aapt resource value: 0x7f020147
-			public const int notification_template_icon_low_bg = 2130837831;
+			public const int notification_template_icon_bg = 2130837831;
+			
+			// aapt resource value: 0x7f020148
+			public const int notification_template_icon_low_bg = 2130837832;
 			
 			// aapt resource value: 0x7f020139
 			public const int notification_tile_bg = 2130837817;
@@ -4547,19 +4547,22 @@ namespace Schedule.Droid
 			public const int shoulders = 2130837824;
 			
 			// aapt resource value: 0x7f020141
-			public const int tooltip_frame_dark = 2130837825;
+			public const int splashscreen = 2130837825;
 			
 			// aapt resource value: 0x7f020142
-			public const int tooltip_frame_light = 2130837826;
+			public const int tooltip_frame_dark = 2130837826;
 			
 			// aapt resource value: 0x7f020143
-			public const int triceps = 2130837827;
+			public const int tooltip_frame_light = 2130837827;
 			
 			// aapt resource value: 0x7f020144
-			public const int xamarin_logo = 2130837828;
+			public const int triceps = 2130837828;
 			
 			// aapt resource value: 0x7f020145
-			public const int yoga = 2130837829;
+			public const int xamarin_logo = 2130837829;
+			
+			// aapt resource value: 0x7f020146
+			public const int yoga = 2130837830;
 			
 			static Drawable()
 			{
@@ -5789,8 +5792,8 @@ namespace Schedule.Droid
 			// aapt resource value: 0x7f0b0172
 			public const int Animation_Design_BottomSheetDialog = 2131427698;
 			
-			// aapt resource value: 0x7f0b0195
-			public const int AppCompatDialogStyle = 2131427733;
+			// aapt resource value: 0x7f0b0196
+			public const int AppCompatDialogStyle = 2131427734;
 			
 			// aapt resource value: 0x7f0b00ad
 			public const int Base_AlertDialog_AppCompat = 2131427501;
@@ -6988,6 +6991,9 @@ namespace Schedule.Droid
 			
 			// aapt resource value: 0x7f0b000e
 			public const int Widget_MediaRouter_MediaRouteButton = 2131427342;
+			
+			// aapt resource value: 0x7f0b0195
+			public const int splashscreen = 2131427733;
 			
 			static Style()
 			{

@@ -3200,13 +3200,13 @@ containing a value of this type.
         public static int arrow_down=0x7f020054;
         public static int arrow_up=0x7f020055;
         public static int avd_hide_password=0x7f020056;
-        public static int avd_hide_password_1=0x7f020148;
-        public static int avd_hide_password_2=0x7f020149;
-        public static int avd_hide_password_3=0x7f02014a;
+        public static int avd_hide_password_1=0x7f020149;
+        public static int avd_hide_password_2=0x7f02014a;
+        public static int avd_hide_password_3=0x7f02014b;
         public static int avd_show_password=0x7f020057;
-        public static int avd_show_password_1=0x7f02014b;
-        public static int avd_show_password_2=0x7f02014c;
-        public static int avd_show_password_3=0x7f02014d;
+        public static int avd_show_password_1=0x7f02014c;
+        public static int avd_show_password_2=0x7f02014d;
+        public static int avd_show_password_3=0x7f02014e;
         public static int biceps=0x7f020058;
         public static int bodybuilder=0x7f020059;
         public static int calendar_bg_selector=0x7f02005a;
@@ -3432,8 +3432,8 @@ containing a value of this type.
         public static int notification_bg_normal=0x7f020136;
         public static int notification_bg_normal_pressed=0x7f020137;
         public static int notification_icon_background=0x7f020138;
-        public static int notification_template_icon_bg=0x7f020146;
-        public static int notification_template_icon_low_bg=0x7f020147;
+        public static int notification_template_icon_bg=0x7f020147;
+        public static int notification_template_icon_low_bg=0x7f020148;
         public static int notification_tile_bg=0x7f020139;
         public static int notify_panel_notification_icon_bg=0x7f02013a;
         public static int pilates=0x7f02013b;
@@ -3442,11 +3442,12 @@ containing a value of this type.
         public static int schedule=0x7f02013e;
         public static int schedule2=0x7f02013f;
         public static int shoulders=0x7f020140;
-        public static int tooltip_frame_dark=0x7f020141;
-        public static int tooltip_frame_light=0x7f020142;
-        public static int triceps=0x7f020143;
-        public static int xamarin_logo=0x7f020144;
-        public static int yoga=0x7f020145;
+        public static int splashscreen=0x7f020141;
+        public static int tooltip_frame_dark=0x7f020142;
+        public static int tooltip_frame_light=0x7f020143;
+        public static int triceps=0x7f020144;
+        public static int xamarin_logo=0x7f020145;
+        public static int yoga=0x7f020146;
     }
     public static final class id {
         public static int ALT=0x7f0c0032;
@@ -3840,7 +3841,7 @@ containing a value of this type.
         public static int Animation_AppCompat_DropDownUp=0x7f0b00ab;
         public static int Animation_AppCompat_Tooltip=0x7f0b00ac;
         public static int Animation_Design_BottomSheetDialog=0x7f0b0172;
-        public static int AppCompatDialogStyle=0x7f0b0195;
+        public static int AppCompatDialogStyle=0x7f0b0196;
         public static int Base_AlertDialog_AppCompat=0x7f0b00ad;
         public static int Base_AlertDialog_AppCompat_Light=0x7f0b00ae;
         public static int Base_Animation_AppCompat_Dialog=0x7f0b00af;
@@ -4244,6 +4245,7 @@ containing a value of this type.
         public static int Widget_Design_TextInputLayout=0x7f0b018b;
         public static int Widget_MediaRouter_Light_MediaRouteButton=0x7f0b000d;
         public static int Widget_MediaRouter_MediaRouteButton=0x7f0b000e;
+        public static int splashscreen=0x7f0b0195;
     }
     public static final class styleable {
         /** Attributes that can be used with a ActionBar.

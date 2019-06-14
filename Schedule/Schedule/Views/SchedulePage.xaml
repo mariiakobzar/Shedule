@@ -18,13 +18,25 @@
             <ContentView x:Name="popupView" BackgroundColor="#C0808080" Padding="10, 0" IsVisible="false" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All">
                 <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
                     <StackLayout Orientation="Vertical" HeightRequest="450" WidthRequest="300" BackgroundColor="White">
-                        <Label Text="Повторення:"
+                        <Label x:Name="labelRepeat"
+                               Text="Повторення:"
+                               IsVisible="False"
+                               Margin="20,15,5,2"/>
+                        <Label x:Name="labelDistance"
+                               Text="Відстань (км):"
+                               IsVisible="False"
                                Margin="20,15,5,2"/>
                         <numeric:SfNumericUpDown x:Name="numericReiteration"
                                                  Minimum="0"
                                                  Value="{Binding SelectedExercise.Reiteration, Mode=TwoWay}"
                                                  Margin="20,0,60,2"/>
-                        <Label Text="Вага:"
+                        <Label x:Name="labelTime"
+                               Text="Час (хв):"
+                               IsVisible="False"
+                               Margin="20,15,5,2"/>
+                        <Label x:Name="labelWeight"
+                               Text="Вага:"
+                               IsVisible="False"
                                Margin="20,15,5,2"/>
                         <numeric:SfNumericUpDown x:Name="numericWeight"
                                                  Minimum="0"

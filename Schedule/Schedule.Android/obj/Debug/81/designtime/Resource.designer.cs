@@ -3784,14 +3784,14 @@ namespace Schedule.Droid
 			// aapt resource value: 0x7F090053
 			public const int abc_vector_test = 2131296339;
 			
-			// aapt resource value: 0x7F010328
-			public const int ad16 = 2130772776;
-			
-			// aapt resource value: 0x7F010022
-			public const int arrow_down = 2130772002;
+			// aapt resource value: 0x7F010329
+			public const int ad16 = 2130772777;
 			
 			// aapt resource value: 0x7F010023
-			public const int arrow_up = 2130772003;
+			public const int arrow_down = 2130772003;
+			
+			// aapt resource value: 0x7F010024
+			public const int arrow_up = 2130772004;
 			
 			// aapt resource value: 0x7F090054
 			public const int avd_hide_password = 2131296340;
@@ -3805,8 +3805,8 @@ namespace Schedule.Droid
 			// aapt resource value: 0x7F010003
 			public const int bodybuilder = 2130771971;
 			
-			// aapt resource value: 0x7F010329
-			public const int calendar_bg_selector = 2130772777;
+			// aapt resource value: 0x7F010330
+			public const int calendar_bg_selector = 2130772784;
 			
 			// aapt resource value: 0x7F010004
 			public const int calves = 2130771972;
@@ -4375,11 +4375,11 @@ namespace Schedule.Droid
 			// aapt resource value: 0x7F090104
 			public const int ic_vol_type_tv_light = 2131296516;
 			
-			// aapt resource value: 0x7F010020
-			public const int inputlayout_togglecollapseicon = 2130772000;
-			
 			// aapt resource value: 0x7F010021
-			public const int inputlayout_togglevisibleicon = 2130772001;
+			public const int inputlayout_togglecollapseicon = 2130772001;
+			
+			// aapt resource value: 0x7F010022
+			public const int inputlayout_togglevisibleicon = 2130772002;
 			
 			// aapt resource value: 0x7F010010
 			public const int leg = 2130771984;
@@ -4492,8 +4492,8 @@ namespace Schedule.Droid
 			// aapt resource value: 0x7F010013
 			public const int prelum = 2130771987;
 			
-			// aapt resource value: 0x7F010024
-			public const int Recurrence = 2130772004;
+			// aapt resource value: 0x7F010025
+			public const int Recurrence = 2130772005;
 			
 			// aapt resource value: 0x7F010014
 			public const int Schedule = 2130771988;
@@ -4504,20 +4504,23 @@ namespace Schedule.Droid
 			// aapt resource value: 0x7F010016
 			public const int shoulders = 2130771990;
 			
+			// aapt resource value: 0x7F010017
+			public const int splashscreen = 2130771991;
+			
 			// aapt resource value: 0x7F090069
 			public const int tooltip_frame_dark = 2131296361;
 			
 			// aapt resource value: 0x7F09006A
 			public const int tooltip_frame_light = 2131296362;
 			
-			// aapt resource value: 0x7F010017
-			public const int triceps = 2130771991;
-			
 			// aapt resource value: 0x7F010018
-			public const int xamarin_logo = 2130771992;
+			public const int triceps = 2130771992;
 			
 			// aapt resource value: 0x7F010019
-			public const int yoga = 2130771993;
+			public const int xamarin_logo = 2130771993;
+			
+			// aapt resource value: 0x7F010020
+			public const int yoga = 2130772000;
 			
 			static Drawable()
 			{
@@ -5654,8 +5657,8 @@ namespace Schedule.Droid
 			// aapt resource value: 0x7F160006
 			public const int Animation_Design_BottomSheetDialog = 2132148230;
 			
-			// aapt resource value: 0x7F060004
-			public const int AppCompatDialogStyle = 2131099652;
+			// aapt resource value: 0x7F060005
+			public const int AppCompatDialogStyle = 2131099653;
 			
 			// aapt resource value: 0x7F160007
 			public const int Base_AlertDialog_AppCompat = 2132148231;
@@ -6149,17 +6152,17 @@ namespace Schedule.Droid
 			// aapt resource value: 0x7F1600A9
 			public const int Base_Widget_Design_TabLayout = 2132148393;
 			
-			// aapt resource value: 0x7F060405
-			public const int CalendarCell = 2131100677;
+			// aapt resource value: 0x7F060406
+			public const int CalendarCell = 2131100678;
+			
+			// aapt resource value: 0x7F060408
+			public const int CalendarCell_CalendarDate = 2131100680;
 			
 			// aapt resource value: 0x7F060407
-			public const int CalendarCell_CalendarDate = 2131100679;
+			public const int CalendarCell_DayHeader = 2131100679;
 			
-			// aapt resource value: 0x7F060406
-			public const int CalendarCell_DayHeader = 2131100678;
-			
-			// aapt resource value: 0x7F060404
-			public const int CalendarTitle = 2131100676;
+			// aapt resource value: 0x7F060405
+			public const int CalendarTitle = 2131100677;
 			
 			// aapt resource value: 0x7F160002
 			public const int CardView = 2132148226;
@@ -6259,6 +6262,9 @@ namespace Schedule.Droid
 			
 			// aapt resource value: 0x7F1600C5
 			public const int RtlUnderlay_Widget_AppCompat_ActionButton_Overflow = 2132148421;
+			
+			// aapt resource value: 0x7F060004
+			public const int splashscreen = 2131099652;
 			
 			// aapt resource value: 0x7F1600C6
 			public const int TextAppearance_AppCompat = 2132148422;

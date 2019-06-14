@@ -3200,13 +3200,13 @@ containing a value of this type.
         public static final int arrow_down=0x7f020054;
         public static final int arrow_up=0x7f020055;
         public static final int avd_hide_password=0x7f020056;
-        public static final int avd_hide_password_1=0x7f020148;
-        public static final int avd_hide_password_2=0x7f020149;
-        public static final int avd_hide_password_3=0x7f02014a;
+        public static final int avd_hide_password_1=0x7f020149;
+        public static final int avd_hide_password_2=0x7f02014a;
+        public static final int avd_hide_password_3=0x7f02014b;
         public static final int avd_show_password=0x7f020057;
-        public static final int avd_show_password_1=0x7f02014b;
-        public static final int avd_show_password_2=0x7f02014c;
-        public static final int avd_show_password_3=0x7f02014d;
+        public static final int avd_show_password_1=0x7f02014c;
+        public static final int avd_show_password_2=0x7f02014d;
+        public static final int avd_show_password_3=0x7f02014e;
         public static final int biceps=0x7f020058;
         public static final int bodybuilder=0x7f020059;
         public static final int calendar_bg_selector=0x7f02005a;
@@ -3432,8 +3432,8 @@ containing a value of this type.
         public static final int notification_bg_normal=0x7f020136;
         public static final int notification_bg_normal_pressed=0x7f020137;
         public static final int notification_icon_background=0x7f020138;
-        public static final int notification_template_icon_bg=0x7f020146;
-        public static final int notification_template_icon_low_bg=0x7f020147;
+        public static final int notification_template_icon_bg=0x7f020147;
+        public static final int notification_template_icon_low_bg=0x7f020148;
         public static final int notification_tile_bg=0x7f020139;
         public static final int notify_panel_notification_icon_bg=0x7f02013a;
         public static final int pilates=0x7f02013b;
@@ -3442,11 +3442,12 @@ containing a value of this type.
         public static final int schedule=0x7f02013e;
         public static final int schedule2=0x7f02013f;
         public static final int shoulders=0x7f020140;
-        public static final int tooltip_frame_dark=0x7f020141;
-        public static final int tooltip_frame_light=0x7f020142;
-        public static final int triceps=0x7f020143;
-        public static final int xamarin_logo=0x7f020144;
-        public static final int yoga=0x7f020145;
+        public static final int splashscreen=0x7f020141;
+        public static final int tooltip_frame_dark=0x7f020142;
+        public static final int tooltip_frame_light=0x7f020143;
+        public static final int triceps=0x7f020144;
+        public static final int xamarin_logo=0x7f020145;
+        public static final int yoga=0x7f020146;
     }
     public static final class id {
         public static final int ALT=0x7f0c0032;
@@ -3840,7 +3841,7 @@ containing a value of this type.
         public static final int Animation_AppCompat_DropDownUp=0x7f0b00ab;
         public static final int Animation_AppCompat_Tooltip=0x7f0b00ac;
         public static final int Animation_Design_BottomSheetDialog=0x7f0b0172;
-        public static final int AppCompatDialogStyle=0x7f0b0195;
+        public static final int AppCompatDialogStyle=0x7f0b0196;
         public static final int Base_AlertDialog_AppCompat=0x7f0b00ad;
         public static final int Base_AlertDialog_AppCompat_Light=0x7f0b00ae;
         public static final int Base_Animation_AppCompat_Dialog=0x7f0b00af;
@@ -4244,6 +4245,7 @@ containing a value of this type.
         public static final int Widget_Design_TextInputLayout=0x7f0b018b;
         public static final int Widget_MediaRouter_Light_MediaRouteButton=0x7f0b000d;
         public static final int Widget_MediaRouter_MediaRouteButton=0x7f0b000e;
+        public static final int splashscreen=0x7f0b0195;
     }
     public static final class styleable {
         /** Attributes that can be used with a ActionBar.

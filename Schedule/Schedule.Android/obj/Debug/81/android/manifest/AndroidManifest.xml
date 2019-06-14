@@ -5,7 +5,8 @@
   <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
   <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
   <application android:label="Schedule.Android" android:name="android.app.Application" android:allowBackup="true" android:icon="@drawable/schedule" android:debuggable="true">
-    <activity android:configChanges="orientation|screenSize" android:icon="@drawable/schedule" android:label="Schedule" android:theme="@style/MainTheme" android:name="md5bb575c091993bb9a697154070226b3e6.MainActivity">
+    <activity android:configChanges="orientation|screenSize" android:icon="@drawable/schedule" android:label="Schedule" android:theme="@style/splashscreen" android:name="md5bb575c091993bb9a697154070226b3e6.MainActivity" />
+    <activity android:icon="@drawable/schedule" android:label="Schedule" android:noHistory="true" android:theme="@style/splashscreen" android:name="md5bb575c091993bb9a697154070226b3e6.SplashScreenActivity">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
         <category android:name="android.intent.category.LAUNCHER" />

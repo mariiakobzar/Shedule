@@ -126,11 +126,29 @@ namespace Schedule.Views
 
         private void ItemsListView_ItemTapped(object sender, Syncfusion.ListView.XForms.ItemTappedEventArgs e)
         {
-            //OnAppearing();
             var item = e.ItemData as Exercise;
             viewmodel.SelectedExercise = item;
-            popupView.IsVisible = true;
+            OnPopup();
             editView.RaiseChild(popupView);
+        }
+
+        void OnPopup()
+        {
+            popupView.IsVisible = true;
+            if (viewmodel.SelectedExercise.Type == "Кардіо")
+            {
+                labelDistance.IsVisible = true;
+                labelTime.IsVisible = true;
+                labelRepeat.IsVisible = false;
+                labelWeight.IsVisible = false;
+                return;
+            }
+
+            labelDistance.IsVisible = false;
+            labelTime.IsVisible = false;
+            labelRepeat.IsVisible = true;
+            labelWeight.IsVisible = true;
+            return;
         }
 
         private void Image_BindingContextChanged(object sender, EventArgs e)

@@ -1,7 +1,4 @@
-﻿using Schedule.Converters;
-using Schedule.ViewModels;
-using System;
-
+﻿using Schedule.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -16,7 +13,6 @@ namespace Schedule.Views
         {
             InitializeComponent();
             BindingContext = viewModel = new AboutViewModel();
-            //roundedView.Source = ImageSource.FromFile("@drawable/Schedule2");
         }
     }
 }
